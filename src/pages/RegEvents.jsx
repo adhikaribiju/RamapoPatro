@@ -20,7 +20,7 @@ const RegEvents = () => {
   useEffect(() => {
     if (user?.email) {
       setIsLoading(true);
-      fetch(`http://localhost:10000/all-events`)
+      fetch(`https://ramapopatro-backend.onrender.com/all-events`)
         .then((res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch events");
@@ -73,7 +73,7 @@ const RegEvents = () => {
   // Delete an event
   const handleDelete = async (id) => {
       // Remove user's email from regEmails in MongoDB
-      const response = await fetch(`http://localhost:10000/unregister/${id}`, {
+      const response = await fetch(`https://ramapopatro-backend.onrender.com/unregister/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

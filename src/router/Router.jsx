@@ -48,12 +48,12 @@ import Welcome from '../components/Welcome';
         {
           path: "edit-event/:id",
           element: <UpdateEvent/>,
-          loader: ({params}) => fetch(`http://localhost:10000/all-events/${params.id}`)
+          loader: ({params}) => fetch(`https://ramapopatro-backend.onrender.com/all-events/${params.id}`)
         },
         {
           path: "/update-userdata",
           element: <PrivateRoute><UpdateUserData/></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:10000/update-userdata/${params.email}`)
+          loader: ({params}) => fetch(`https://ramapopatro-backend.onrender.com/update-userdata/${params.email}`)
         },
         {
           path:"/events/:id",

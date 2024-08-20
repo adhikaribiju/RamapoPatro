@@ -24,7 +24,7 @@ const UpdateEvent = () => {
     data.skills = selectedOption;
     // console.log(data)
      // update the book object
-     fetch(`http://localhost:10000/update-event/${id}`, {
+     fetch(`https://ramapopatro-backend.onrender.com/update-event/${id}`, {
       method: "PATCH",
 
       headers: {

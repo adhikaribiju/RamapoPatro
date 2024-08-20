@@ -15,7 +15,7 @@ const EventDetails = () => {
   const [isRegistered, setIsRegistered] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:10000/all-events/${id}`)
+    fetch(`https://ramapopatro-backend.onrender.com/all-events/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setJob(data);
@@ -28,7 +28,7 @@ const EventDetails = () => {
   const handleJobApply = async () => {
     if (user && user.email) {
       // Update MongoDB with user's email
-      const response = await fetch(`http://localhost:10000/register/${id}`, {
+      const response = await fetch(`https://ramapopatro-backend.onrender.com/register/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -57,7 +57,7 @@ const EventDetails = () => {
   const handleDeleteRegistration = async () => {
     if (user && user.email) {
       // Remove user's email from regEmails in MongoDB
-      const response = await fetch(`http://localhost:10000/unregister/${id}`, {
+      const response = await fetch(`https://ramapopatro-backend.onrender.com/unregister/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
