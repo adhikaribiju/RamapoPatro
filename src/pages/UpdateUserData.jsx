@@ -58,7 +58,7 @@ const UpdateUserData = () => {
   // Fetch user data on component mount
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5001/userdata/${user}`)
+      fetch(`http://localhost:10000/userdata/${user}`)
         .then((res) => res.json())
         .then((data) => {
           if (data) {
@@ -151,7 +151,7 @@ const UpdateUserData = () => {
 
     data.userEmail = user; // Attach user email
 
-    fetch(`http://localhost:5001/update-userdata/${user}`, {
+    fetch(`http://localhost:10000/update-userdata/${user}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

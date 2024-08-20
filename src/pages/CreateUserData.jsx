@@ -127,7 +127,7 @@ const CreateUserData = () => {
     //const user = useCurrentUser().email;
     data.userEmail = user ; // Replace with actual email
 
-    fetch("http://localhost:5001/class-schedule", {
+    fetch("http://localhost:10000/class-schedule", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

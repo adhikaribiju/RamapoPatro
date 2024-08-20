@@ -97,7 +97,7 @@ const CreateEvent = () => {
 
     console.log(data);
     data.postedBy = userEmail.email;
-    fetch("http://localhost:5001/post-event", {
+    fetch("http://localhost:10000/post-event", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

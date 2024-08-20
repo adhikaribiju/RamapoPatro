@@ -19,7 +19,7 @@ const CalendarPage = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5001/all-events`)
+      fetch(`http://localhost:10000/all-events`)
         .then((res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch events");
@@ -43,7 +43,7 @@ const CalendarPage = () => {
           }));
 
           // Fetch the user's class schedule
-          fetch(`http://localhost:5001/userdata/${user.email}`)
+          fetch(`http://localhost:10000/userdata/${user.email}`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error("Failed to fetch user data");

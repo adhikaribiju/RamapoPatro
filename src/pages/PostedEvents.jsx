@@ -19,7 +19,7 @@ const PostedEvents = () => {
   // console.log(control)
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5001/myEvents/${user?.email}`)
+    fetch(`http://localhost:10000/myEvents/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -54,7 +54,7 @@ const PostedEvents = () => {
 // delete a books
 const handleDelete = (id) => {
   // console.log(id)
-  fetch(`http://localhost:5001/event/${id}`, {
+  fetch(`http://localhost:10000/event/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json())

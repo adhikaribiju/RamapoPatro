@@ -24,12 +24,12 @@ const Home = () => {
       try {
         setIsLoading(true);
         console.log("Fetching all events...");
-        let res = await fetch("http://localhost:5001/all-events");
+        let res = await fetch("http://localhost:10000/all-events");
         data = await res.json();
   
         if (user) {
           console.log("Fetching user data...");
-          res = await fetch(`http://localhost:5001/userdata/${user.email}`);
+          res = await fetch(`http://localhost:10000/userdata/${user.email}`);
           
           if (!res.ok) {
             throw new Error("Failed to fetch user data");
@@ -58,14 +58,14 @@ const Home = () => {
 /*
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5001/all-events")
+    fetch("http://localhost:10000/all-events")
       .then((res) => res.json())
       .then((data) => {
         if (user){
           console.log("Hereeeeee");
           //fetch the userdata
           // Fetch the user's class schedule
-          fetch(`http://localhost:5001/userdata/${user.email}`)
+          fetch(`http://localhost:10000/userdata/${user.email}`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error("Failed to fetch user data");
